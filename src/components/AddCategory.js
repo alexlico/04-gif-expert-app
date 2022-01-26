@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+
 export const AddCategory = ({setCategories}) => {
     const [inputValue, setInputValue] = useState('')
     
@@ -8,6 +9,7 @@ export const AddCategory = ({setCategories}) => {
     }
 
     const handlerSubmit = (e) => {
+       
         e.preventDefault();
         if(inputValue.trim().length > 2){
             setCategories((cat) => [inputValue, ...cat])
@@ -17,6 +19,7 @@ export const AddCategory = ({setCategories}) => {
 
     return (
         <form onSubmit={handlerSubmit}>
+            <p>{inputValue}</p>
             <input 
                 type="text" 
                 value={inputValue}
